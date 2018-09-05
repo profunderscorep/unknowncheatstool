@@ -1,0 +1,122 @@
+#include <string>
+#include <array>
+#pragma once
+
+char valid_chars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '-' };
+
+bool is_char_valid(char* ref, char input)
+{
+	bool isvalid = false;
+	for (unsigned int i = 0; i < 11; i++)
+	{
+		if (ref[i] == input)
+			isvalid = true;
+	}
+	return isvalid;
+}
+
+
+std::string randomasmcode[] = {
+
+	"8b 45 f0                mov    eax,DWORD PTR[ebp - 0x10]	",
+	"05 20 02 00 00          add    eax,0x220					",
+	"50                      push   eax							",
+	"8b 4d f0                mov    ecx, DWORD PTR[ebp - 0x10]	",
+	"81 c1 7a 14 00 00       add    ecx, 0x147a					",
+	"51                      push   ecx							",
+	"8b 55 f4                mov    edx, DWORD PTR[ebp - 0xc]	",
+	"8b 02                   mov    eax, DWORD PTR[edx]			",
+	"8b 4d f4                mov    ecx, DWORD PTR[ebp - 0xc]	",
+	"8b 50 50                mov    edx, DWORD PTR[eax + 0x50]	",
+	"ff d2                   call   edx							",
+	"89 45 f8                mov    DWORD PTR[ebp - 0x8], eax	",
+	"83 7d f8 00             cmp    DWORD PTR[ebp - 0x8], 0x0	",
+	"75 07                   jne    0x30						",
+	"33 c0                   xor    eax, eax					",
+	"e9 ea 00 00 00          jmp    0x11a						",
+	"68 05 01 00 00          push   0x105						",
+	"8b 45 f0                mov    eax, DWORD PTR[ebp - 0x10]	",
+	"05 5c 0e 00 00          add    eax, 0xe5c					",
+	"50                      push   eax							",
+	"8b 4d f8                mov    ecx, DWORD PTR[ebp - 0x8]	",
+	"51                      push   ecx							",
+	"e8 fb aa ff ff          call   0xffffab42					",
+	"85 c0                   test   eax, eax					",
+	"75 07                   jne    0x52						",
+	"33 c0                   xor    eax, eax					",
+	"e9 c8 00 00 00          jmp    0x11a						",
+	"8b 55 f0                mov    edx, DWORD PTR[ebp - 0x10]	",
+	"83 ba ac 18 00 00 00    cmp    DWORD PTR[edx + 0x18ac], 0x0",
+	"74 57                   je     0xb5						",
+	"8b 45 f8                mov    eax, DWORD PTR[ebp - 0x8]	",
+	"50                      push   eax							",
+	"8b 4d f0                mov    ecx, DWORD PTR[ebp - 0x10]	",
+	"81 c1 2a 04 00 00       add    ecx, 0x42a					",
+	"51                      push   ecx							",
+	"e8 51 22 00 00          call   0x22c2						",
+	"89 45 fc                mov    DWORD PTR[ebp - 0x4], eax	",
+	"83 7d fc 00             cmp    DWORD PTR[ebp - 0x4], 0x0	",
+	"74 25                   je     0x9f						",
+	"8b 55 f0                mov    edx, DWORD PTR[ebp - 0x10]	",
+	"83 c2 10                add    edx, 0x10					",
+	"52                      push   edx							",
+	"8b 45 f0                mov    eax, DWORD PTR[ebp - 0x10]	",
+	"05 2a 04 00 00          add    eax, 0x42a					",
+	"50                      push   eax							",
+	"e8 73 a4 ff ff          call   0xffffa502					",
+	"50                      push   eax							",
+	"68 f4 27 d0 01          push   0x1d027f4					",
+	"e8 a8 b4 ff ff          call   0xffffb542					",
+	"83 c4 0c                add    esp, 0xc					",
+	"eb 14                   jmp    0xb3						",
+	"ff 15 d0 10 d0 01       call   DWORD PTR ds : 0x1d010d0	",
+	"50                      push   eax							",
+	"68 a4 2a d0 01          push   0x1d02aa4					",
+	"e8 92 b4 ff ff          call   0xffffb542					",
+	"83 c4 08                add    esp, 0x8					",
+	"eb 4a                   jmp    0xff						",
+	"e8 78 00 00 00          call   0x132						",
+	"85 c0                   test   eax, eax					",
+	"74 28                   je     0xe6						",
+	"6a 01                   push   0x1							",
+	"68 5c 33 d2 01          push   0x1d2335c					",
+	"8b 4d f0                mov    ecx, DWORD PTR[ebp - 0x10]	",
+	"51                      push   ecx							",
+	"68 b0 b5 d0 01          push   0x1d0b5b0					",
+	"8b 55 f8                mov    edx, DWORD PTR[ebp - 0x8]	",
+	"52                      push   edx							",
+	"8b 45 f0                mov    eax, DWORD PTR[ebp - 0x10]	",
+	"05 2a 04 00 00          add    eax, 0x42a					",
+	"50                      push   eax							",
+	"ff 15 d8 cc d1 01       call   DWORD PTR ds : 0x1d1ccd8	",
+	"89 45 fc                mov    DWORD PTR[ebp - 0x4], eax	",
+	"eb 19                   jmp    0xff						",
+	"6a 00                   push   0x0							",
+	"8b 4d f8                mov    ecx, DWORD PTR[ebp - 0x8]	",
+	"51                      push   ecx							",
+	"8b 55 f0                mov    edx, DWORD PTR[ebp - 0x10]	",
+	"81 c2 2a 04 00 00       add    edx, 0x42a					",
+	"52                      push   edx							",
+	"ff 15 dc cc d1 01       call   DWORD PTR ds : 0x1d1ccdc	",
+	"89 45 fc                mov    DWORD PTR[ebp - 0x4], eax	",
+	"83 7d fc 00             cmp    DWORD PTR[ebp - 0x4], 0x0	",
+	"75 12                   jne    0x117						",
+	"8b 45 f0                mov    eax, DWORD PTR[ebp - 0x10]	",
+	"05 5c 0e 00 00          add    eax, 0xe5c					",
+	"50                      push   eax							",
+	"8b 4d f8                mov    ecx, DWORD PTR[ebp - 0x8]	",
+	"51                      push   ecx							",
+	"e8 1b ad ff ff          call   0xffffae32					",
+	"8b 45 fc                mov    eax, DWORD PTR[ebp - 0x4]	",
+	"8b e5                   mov    esp, ebp					",
+	"5d                      pop    ebp							",
+	"c2 04 00                ret    0x4							",
+	"89 45 f8                mov    DWORD PTR[ebp - 0x8], eax	",
+	"83 7d f8 00             cmp    DWORD PTR[ebp - 0x8], 0x0	",
+	"75 07                   jne    0x30						",
+	"33 c0                   xor    eax, eax					",
+	"e9 ea 00 00 00          jmp    0x11a						",
+	"52                      push   edx							",
+	"8b 45 f0                mov    eax, DWORD PTR[ebp - 0x10]	"
+
+};
